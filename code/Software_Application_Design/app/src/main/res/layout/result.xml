@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_gravity="top"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="결과"
+        android:textColor="#FFFFFF"
+        android:textSize="20dp"
+        android:gravity="center"
+        android:background="@color/home" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="000 교수님 / 해당 날짜"
+        android:textColor="#000000"
+        android:textSize="20dp"
+        android:gravity="center" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="소프트웨어 응용설계"
+        android:textSize="20dp"
+        android:textColor="#000000"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:background="@color/subject"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="총 인원: 3 명"
+            android:textSize="20dp"
+            android:textColor="#000000" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="전 시간 인원: 3 명"
+            android:textSize="20dp"
+            android:textColor="#000000" />
+        <TextView
+            android:id="@+id/nowPeople"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="현재 인원: 2 명"
+            android:textSize="20dp"
+            android:textColor="#000000" />
+        <TextView
+            android:id="@+id/resultPeople"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="결과: 결석자 존재"
+            android:textSize="20dp"
+            android:textColor="#000000" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="사진"
+            android:textSize="100dp"
+            android:textColor="#000000"
+            android:gravity="center" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:gravity="bottom"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/modBtn"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:text="수정"
+            android:textColor="#FFFFFF"
+            android:textSize="20dp"
+            android:gravity="center"
+            android:layout_alignParentBottom="true"
+            android:backgroundTint="@color/home" />
+        <Button
+            android:id="@+id/okBtn"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:text="확인"
+            android:textColor="#FFFFFF"
+            android:textSize="20dp"
+            android:gravity="center"
+            android:layout_alignParentBottom="true"
+            android:backgroundTint="@color/home" />
+    </LinearLayout>
+
+
+</LinearLayout>

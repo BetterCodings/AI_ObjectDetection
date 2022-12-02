@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_gravity="top"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="조회"
+        android:textColor="#FFFFFF"
+        android:textSize="20dp"
+        android:gravity="center"
+        android:background="@color/home" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="000 교수님 / 해당 날짜"
+        android:textColor="#000000"
+        android:textSize="20dp"
+        android:gravity="center" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:text="화"
+            android:textSize="20dp"
+            android:textColor="#000000"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:background="@color/subject"/>
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:orientation="vertical">
+            <Button
+                android:id="@+id/tues1Btn"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="소프트웨어 응용설계\n3교시 11:30 ~ 12:20"
+                android:textSize="15dp"
+                android:textColor="#000000"
+                android:gravity="center"/>
+            <Button
+                android:id="@+id/tues2Btn"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="소프트웨어 응용설계\n4교시 12:30 ~ 13:20"
+                android:textSize="15dp"
+                android:textColor="#000000"
+                android:gravity="center"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:text="목"
+            android:textSize="20dp"
+            android:textColor="#000000"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:background="@color/subject"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:orientation="vertical">
+            <Button
+                android:id="@+id/thurs1Btn"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="소프트웨어 응용설계\n3교시 11:30 ~ 12:20"
+                android:textSize="15dp"
+                android:textColor="#000000"
+                android:gravity="center"/>
+            <Button
+                android:id="@+id/thurs2Btn"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="소프트웨어 응용설계\n4교시 12:30 ~ 13:20"
+                android:textSize="15dp"
+                android:textColor="#000000"
+                android:gravity="center"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:gravity="bottom"
+        android:layout_weight="1">
+        <Button
+            android:id="@+id/okBtn"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:text="확인"
+            android:textColor="#FFFFFF"
+            android:textSize="20dp"
+            android:gravity="center"
+            android:layout_alignParentBottom="true"
+            android:backgroundTint="@color/home" />
+    </LinearLayout>
+
+
+</LinearLayout>

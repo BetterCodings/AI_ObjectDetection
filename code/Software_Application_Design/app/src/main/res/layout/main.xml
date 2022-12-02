@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_gravity="top"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="HOME"
+        android:textColor="#FFFFFF"
+        android:textSize="20dp"
+        android:gravity="center"
+        android:background="@color/home" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="000 교수님 / 해당 날짜"
+        android:textColor="#000000"
+        android:textSize="20dp"
+        android:gravity="center" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        android:orientation="vertical"
+        android:background="@color/subject">
+        <RadioButton
+            android:id="@+id/sub1Btn"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:text="소프트웨어 응용설계\n3교시 11:30 ~ 12:20"
+            android:textSize="20dp"
+            android:textColor="#000000"
+            android:gravity="center"/>
+        <RadioButton
+            android:id="@+id/sub2Btn"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:text="소프트웨어 응용설계\n4교시 11:30 ~ 12:20"
+            android:textSize="20dp"
+            android:textColor="#000000"
+            android:gravity="center"/>
+    </RadioGroup>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:gravity="bottom"
+        android:layout_weight="1">
+        <Button
+            android:id="@+id/cameraBtn"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:text="촬영"
+            android:textColor="#FFFFFF"
+            android:textSize="20dp"
+            android:gravity="center"
+            android:layout_alignParentBottom="true"
+            android:backgroundTint="@color/home" />
+        <Button
+            android:id="@+id/searchBtn"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:text="조회"
+            android:textColor="#FFFFFF"
+            android:textSize="20dp"
+            android:gravity="center"
+            android:layout_alignParentBottom="true"
+            android:backgroundTint="@color/home" />
+    </LinearLayout>
+
+
+</LinearLayout>
