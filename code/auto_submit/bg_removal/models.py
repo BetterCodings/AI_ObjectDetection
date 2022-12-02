@@ -10,6 +10,9 @@ class User(models.Model):
     name= models.CharField(max_length=30)
     ID =models.CharField(max_length=30,primary_key=True)
     Passwd=models.CharField(max_length=30)
+    def login():
+
+        return 
 
 class Lecture(models.Model):
     ID = models.CharField(max_length=30,primary_key=True)

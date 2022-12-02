@@ -12,6 +12,7 @@ router = routers.DefaultRouter()
 router.register(r'posts', views.PostViewset)
 
 urlpatterns = [
+    path("posts/get/",views.get_api),
     path("admin/", admin.site.urls),
     re_path(r'^',include(router.urls)),
     re_path(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
