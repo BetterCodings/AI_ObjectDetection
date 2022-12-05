@@ -18,7 +18,6 @@ import retrofit2.http.Query;
 
 public interface ApiService {
     public static final String API_URL = "https://428c-59-14-135-171.jp.ngrok.io/";
-
     @GET("posts")
     Call<ResponseBody> get_Test(@Query("format") String json);
 

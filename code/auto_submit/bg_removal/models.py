@@ -1,23 +1,22 @@
 from django.db import models
-
+from account.models import Account
 # Create your models here.
 class Post(models.Model):
     title = models.CharField(max_length=200)
     text = models.TextField()
     image = models.ImageField(default='media/default_image.jpg')
 
-class User(models.Model):
-    name= models.CharField(max_length=30)
-    ID =models.CharField(max_length=30,primary_key=True)
-    Passwd=models.CharField(max_length=30)
-    def login():
-
-        return 
+# class User(models.Model):
+#     name= models.CharField(max_length=30)
+#     ID =models.CharField(max_length=30,primary_key=True)
+#     Passwd=models.CharField(max_length=30)
+#     def login():
+#         return 
 
 class Lecture(models.Model):
     ID = models.CharField(max_length=30,primary_key=True)
     subject = models.CharField(max_length=30)
-    pID = models.ForeignKey(User,on_delete=models.CASCADE)
+    pID = models.ForeignKey(Account,on_delete=models.CASCADE)
     sum = models.IntegerField(default=0)
 
 class Class(models.Model):
