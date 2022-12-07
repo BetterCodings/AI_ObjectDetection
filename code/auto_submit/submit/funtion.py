@@ -7,5 +7,6 @@ def yolo(file):
     results.render()
     img_base64 = im.fromarray(results.ims[0])
     img_base64.save(file, format="JPEG")
+    return results.pandas().xyxy[0]['class'].count()
 yolo("submit/2person.png")
 
