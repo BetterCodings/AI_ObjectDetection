@@ -4,6 +4,8 @@ from account.models import Account # 몰루?
 class Student(models.Model):
     ID= models.CharField(max_length=30,primary_key=True)
     name=models.CharField(max_length=10)
+
+    
 # class Class(models.Model):
 #     day = models.IntegerField(default=0)
 #     period = models.IntegerField(default=0)
