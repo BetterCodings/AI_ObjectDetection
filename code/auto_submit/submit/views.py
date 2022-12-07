@@ -15,7 +15,7 @@ import os
 from django.core.files.storage import FileSystemStorage
 from rest_framework import status
 from rest_framework.response import Response
-
+from submit.funtion import yolo
 from django.core.files.base import ContentFile
 from auto_submit.settings import MEDIA_URL
 
@@ -44,6 +44,16 @@ class AttendenceViewset(viewsets.ModelViewSet):
 class PostsViewset(viewsets.ModelViewSet):
     queryset = Posts.objects.all()
     serializer_class = PostsSerializer
+    def create(self, request, *args, **kwargs):
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+
+        self.perform_create(serializer)
+        headers = self.get_success_headers(serializer.data)
+        #assert False,serializer["image"].url
+        #yolo(serializer["image"].url)
+        yolo("media/"+str(request.data["image"]))
+        return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
     # def create(self, request, *args, **kwargs):
 
     #     # post_data = request.data

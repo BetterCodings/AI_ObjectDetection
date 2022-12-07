@@ -33,7 +33,7 @@ urlpatterns = [
     path("attendence/",submit_views.select_attendence),
 
     path("attendence/student/",submit_views.student),
-    path("posts/post/",submit_views.Posts_),   
+    #path("posts/post/",submit_views.Posts_),   
     re_path(r'^',include(router.urls)),
     # re_path(r'^',include(router0.urls)),
     # re_path(r'^',include(router1.urls)),
