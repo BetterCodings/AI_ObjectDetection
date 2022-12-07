@@ -626,7 +626,7 @@ class AutoShape(nn.Module):
     iou = 0.45  # NMS IoU threshold
     agnostic = False  # NMS class-agnostic
     multi_label = False  # NMS multiple labels per box
-    classes = None  # (optional list) filter by class, i.e. = [0, 15, 16] for COCO persons, cats and dogs
+    classes = [0]  # (optional list) filter by class, i.e. = [0, 15, 16] for COCO persons, cats and dogs
     max_det = 1000  # maximum number of detections per image
     amp = False  # Automatic Mixed Precision (AMP) inference
 
@@ -750,17 +750,19 @@ class Detections:
                 if show or save or render or crop:
                     annotator = Annotator(im, example=str(self.names))
                     for *box, conf, cls in reversed(pred):  # xyxy, confidence, class
-                        label = f'{self.names[int(cls)]} {conf:.2f}'
-                        if crop:
-                            file = save_dir / 'crops' / self.names[int(cls)] / self.files[i] if save else None
-                            crops.append({
-                                'box': box,
-                                'conf': conf,
-                                'cls': cls,
-                                'label': label,
-                                'im': save_one_box(box, im, file=file, save=save)})
-                        else:  # all others
-                            annotator.box_label(box, label if labels else '', color=colors(cls))
+                        if cls == 0:
+                            label = None
+                            #label = f'{self.names[int(cls)]} {conf:.2f}'
+                            if crop:
+                                file = save_dir / 'crops' / self.names[int(cls)] / self.files[i] if save else None
+                                crops.append({
+                                    'box': box,
+                                    'conf': conf,
+                                    'cls': cls,
+                                    'label': label,
+                                    'im': save_one_box(box, im, file=file, save=save)})
+                            else:  # all others
+                                annotator.box_label(box, label if labels else '', color=(26,147,52))
                     im = annotator.im
             else:
                 s += '(no detections)'
@@ -782,7 +784,7 @@ class Detections:
             if save:
                 LOGGER.info(f'Saved results to {save_dir}\n')
             return crops
-
+            
     @TryExcept('Showing images is not supported in this environment')
     def show(self, labels=True):
         self._run(show=True, labels=labels)  # show results
