@@ -1,7 +1,7 @@
 from django.shortcuts import render,get_object_or_404
 from rest_framework import viewsets
-from submit.models import Class,Lecture,Attendence,Student,Attendence_Student
-from .serializers import ClassSerializer,LectureSerializer,AttendenceSerializer,StudentSerializer,Attendence_StudentSerializer
+from submit.models import Class,Lecture,Attendence,Student,Attendence_Student,Posts
+from .serializers import ClassSerializer,LectureSerializer,AttendenceSerializer,StudentSerializer,Attendence_StudentSerializer,PostsSerializer
 from django.http import HttpResponse, JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.utils import timezone
@@ -31,6 +31,9 @@ class AttendenceViewset(viewsets.ModelViewSet):
     queryset = Attendence.objects.all()
     serializer_class = AttendenceSerializer
 
+class PostsViewset(viewsets.ModelViewSet):
+    queryset = Posts.objects.all()
+    serializer_class = PostsSerializer
 @csrf_exempt
 def lecture(request, ID):
     if request.method == 'GET':

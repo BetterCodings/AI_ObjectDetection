@@ -1,4 +1,3 @@
-
 from django.contrib import admin
 from django.urls import path
 from rest_framework import routers
@@ -19,6 +18,8 @@ from django.conf import settings
 # router3.register(r'attendences', submit_views.AttendenceViewset)
 # router4 = routers.DefaultRouter()
 # router4.register(r'students', submit_views.StudentViewset)
+router = routers.DefaultRouter()
+router.register(r'posts', submit_views.PostsViewset)
 urlpatterns = [
     path('login/', account_views.login),
 
@@ -33,7 +34,7 @@ urlpatterns = [
 
     path("attendence/student/",submit_views.student),
 
-
+    re_path(r'^',include(router.urls)),
     # re_path(r'^',include(router0.urls)),
     # re_path(r'^',include(router1.urls)),
     # re_path(r'^',include(router2.urls)),

@@ -59,5 +59,7 @@ class Attendence_Student(models.Model):
     submit = models.BooleanField(default=True)
 
 
-
+class Posts(models.Model):
+    ID = models.CharField(max_length=30,primary_key=True)
+    image = models.ImageField(default='media/default_image.jpg')
 

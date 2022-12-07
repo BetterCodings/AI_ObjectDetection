@@ -1,10 +1,17 @@
 from rest_framework import  serializers
-from .models import Lecture,Class,Attendence,Student,Attendence_Student
+from .models import Lecture,Class,Attendence,Student,Attendence_Student,Posts
+
+class PostsSerializer(serializers.ModelSerializer):
+    image=serializers.ImageField(use_url=True)
+    class Meta:
+        model = Posts
+        fields = ('ID', "image")
 
 class LectureSerializer(serializers.ModelSerializer):
     class Meta:
         model = Lecture
         fields = ('ID', 'subject','pID',"sum")
+
 
 
 class ClassSerializer(serializers.ModelSerializer):
