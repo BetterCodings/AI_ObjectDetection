@@ -4,6 +4,8 @@ from account.models import Account # 몰루?
 class Student(models.Model):
     ID= models.CharField(max_length=30,primary_key=True)
     name=models.CharField(max_length=10)
+
+    
 # class Class(models.Model):
 #     day = models.IntegerField(default=0)
 #     period = models.IntegerField(default=0)
@@ -34,10 +36,11 @@ class Class(models.Model):
 
 
 class Attendence(models.Model):
-    date=models.DateTimeField('date published')
+    date=models.CharField(max_length=30)#models.DateTimeField('date published')
+    ""
     lID =models.ForeignKey(Lecture,on_delete=models.CASCADE)
     attend=models.IntegerField(default=0)
-    #image = models.ImageField(default='media/default_image.jpg')
+    image = models.ImageField(default='media/default_image.jpg')
     members = models.ManyToManyField(Student,through="Attendence_Student")
     def init_Attendence_Student(self):
         for student in self.lID.members.all():

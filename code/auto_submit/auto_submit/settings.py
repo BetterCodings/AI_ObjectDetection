@@ -58,11 +58,14 @@ TEMPLATES = [
         },
     },
 ]
-# REST_FRAMEWORK = { # 권한 설정
-#     'DEFAULT_PERMISSION_CLASSES': [
-#         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
-#     ]
-# }
+REST_FRAMEWORK = { # 권한 설정
+    'DEFAULT_PARESR_CLASSES':[
+        "rest_framework.parsers.MultiPartParser"
+    ]
+    # 'DEFAULT_PERMISSION_CLASSES': [
+    #     'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    # ]
+}
 
 WSGI_APPLICATION = "auto_submit.wsgi.application"
 

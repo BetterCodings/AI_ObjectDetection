@@ -13,7 +13,7 @@ Usage:
 import torch
 
 
-def _create(name, pretrained=True, channels=3, classes=80, autoshape=True, verbose=True, device=None):
+def _create(name, pretrained=True, channels=3, classes=1, autoshape=True, verbose=True, device=None):
     """Creates or loads a YOLOv5 model
 
     Arguments:
@@ -44,7 +44,7 @@ def _create(name, pretrained=True, channels=3, classes=80, autoshape=True, verbo
     path = name.with_suffix('.pt') if name.suffix == '' and not name.is_dir() else name  # checkpoint path
     try:
         device = select_device(device)
-        if pretrained and channels == 3 and classes == 80:
+        if pretrained and channels == 3 and classes == 1:
             try:
                 model = DetectMultiBackend(path, device=device, fuse=autoshape)  # detection model
                 if autoshape:
@@ -67,7 +67,8 @@ def _create(name, pretrained=True, channels=3, classes=80, autoshape=True, verbo
                 csd = intersect_dicts(csd, model.state_dict(), exclude=['anchors'])  # intersect
                 model.load_state_dict(csd, strict=False)  # load
                 if len(ckpt['model'].names) == classes:
-                    model.names = ckpt['model'].names  # set class names attribute
+                    #model.names = ckpt['model'].names  # set class names attribute
+                    model.names = 'person'  # set class names attribute
         if not verbose:
             LOGGER.setLevel(logging.INFO)  # reset to default
         return model.to(device)
