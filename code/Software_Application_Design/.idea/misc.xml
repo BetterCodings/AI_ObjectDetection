@@ -3,14 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Homin/AndroidStudioProjects/Software_Application_Design/app/src/main/res/drawable/border.xml" value="0.1" />
-        <entry key="..\:/Users/Homin/AndroidStudioProjects/Software_Application_Design/app/src/main/res/drawable/round_button.xml" value="0.1" />
-        <entry key="..\:/Users/Homin/AndroidStudioProjects/Software_Application_Design/app/src/main/res/layout/activity_main.xml" value="0.33" />
-        <entry key="..\:/Users/Homin/AndroidStudioProjects/Software_Application_Design/app/src/main/res/layout/login.xml" value="0.33" />
-        <entry key="..\:/Users/Homin/AndroidStudioProjects/Software_Application_Design/app/src/main/res/layout/main.xml" value="0.25" />
-        <entry key="..\:/Users/Homin/AndroidStudioProjects/Software_Application_Design/app/src/main/res/layout/modify.xml" value="0.33" />
-        <entry key="..\:/Users/Homin/AndroidStudioProjects/Software_Application_Design/app/src/main/res/layout/result.xml" value="0.25" />
-        <entry key="..\:/Users/Homin/AndroidStudioProjects/Software_Application_Design/app/src/main/res/layout/search.xml" value="0.33" />
+        <entry key="..\:/Users/Homin/AndroidStudioProjects/Software_Application_Design/app/src/main/res/drawable/border.xml" value="0.11" />
+        <entry key="..\:/Users/Homin/AndroidStudioProjects/Software_Application_Design/app/src/main/res/layout/activity_main.xml" value="0.16111111111111112" />
+        <entry key="..\:/Users/Homin/AndroidStudioProjects/Software_Application_Design/app/src/main/res/layout/login.xml" value="0.16111111111111112" />
+        <entry key="..\:/Users/Homin/AndroidStudioProjects/Software_Application_Design/app/src/main/res/layout/main.xml" value="0.13218390804597702" />
+        <entry key="..\:/Users/Homin/AndroidStudioProjects/Software_Application_Design/app/src/main/res/layout/modify.xml" value="0.16111111111111112" />
+        <entry key="..\:/Users/Homin/AndroidStudioProjects/Software_Application_Design/app/src/main/res/layout/result.xml" value="0.16111111111111112" />
       </map>
     </option>
   </component>

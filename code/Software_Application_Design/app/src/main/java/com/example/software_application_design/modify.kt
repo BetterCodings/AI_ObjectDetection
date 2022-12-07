@@ -11,7 +11,8 @@ import kotlinx.android.synthetic.main.main.*
 import kotlinx.android.synthetic.main.main.searchBtn
 import kotlinx.android.synthetic.main.modify.*
 
-class modify : AppCompatActivity() {
+class Modify : AppCompatActivity() {
+    var RESULT_MODIFY = 1
     @SuppressLint("ResourceAsColor")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -72,7 +73,7 @@ class modify : AppCompatActivity() {
         searchBtn.setOnClickListener {
             var intent = Intent()
             intent.putExtra("count", count.toString())
-            setResult(Activity.RESULT_OK, intent)
+            setResult(RESULT_MODIFY, intent)
             finish()
         }
     }
