@@ -19,16 +19,13 @@ class ClassSerializer(serializers.ModelSerializer):
         model = Class
         fields = ('day', 'period','lID',"classroom")
 
-# class AttendenceSerializer(serializers.ModelSerializer):
-#     image=serializers.ImageField(use_url=True)
-#     class Meta:
-#         model = Attendence
-#         fields = ('date', 'lID','attend',"image")
-
 class AttendenceSerializer(serializers.ModelSerializer):
+    image=serializers.ImageField(use_url=True)
     class Meta:
         model = Attendence
-        fields = ('date', 'lID','attend')
+        fields = ('date', 'lID','attend',"image")
+
+
         
 class StudentSerializer(serializers.ModelSerializer):
     class Meta:

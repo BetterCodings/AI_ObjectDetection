@@ -15,7 +15,7 @@ import os
 from django.core.files.storage import FileSystemStorage
 from rest_framework import status
 from rest_framework.response import Response
-from submit.funtion import yolo
+from submit.funtion import yolo,setimage
 from django.core.files.base import ContentFile
 from auto_submit.settings import MEDIA_URL
 
@@ -40,6 +40,18 @@ class LectureViewset(viewsets.ModelViewSet):
 class AttendenceViewset(viewsets.ModelViewSet):
     queryset = Attendence.objects.all()
     serializer_class = AttendenceSerializer
+    def create(self, request, *args, **kwargs):
+        data=request.data
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        self.perform_create(serializer)
+
+        _,results=yolo("media/"+str(request.data["image"]))
+        setimage("media/"+str(request.data["image"]),results)
+        headers = self.get_success_headers(serializer.data)
+
+        #return JsonResponse(serializer.data, safe=False)
+        return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
 
 class PostsViewset(viewsets.ModelViewSet):
     queryset = Posts.objects.all()

@@ -37,7 +37,6 @@ class Class(models.Model):
 
 class Attendence(models.Model):
     date=models.CharField(max_length=30)#models.DateTimeField('date published')
-    ""
     lID =models.ForeignKey(Lecture,on_delete=models.CASCADE)
     attend=models.IntegerField(default=0)
     image = models.ImageField(default='media/default_image.jpg')
